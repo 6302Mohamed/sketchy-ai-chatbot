@@ -1,4 +1,6 @@
+Here is the complete, updated **README.md** content in raw Markdown format. I have fixed the repository URL logic, added the Groq setup steps, and included the customization sections for `profile.txt` and the system prompt as requested.
 
+```markdown
 # 🚀 Sketchy AI
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/downloads/)
@@ -6,37 +8,36 @@
 [![Groq](https://img.shields.io/badge/AI-Groq_Cloud-orange.svg)](https://groq.com/)
 [![Docker](https://img.shields.io/badge/Container-Docker-blue.svg)](https://www.docker.com/)
 
-**Sketchy AI** is a high-performance, web-based chatbot built to provide a modern AI experience. Leveraging the **Groq LPU™ Inference Engine**, it delivers near-instantaneous responses while offering professional-grade features like multi-conversation persistence and intelligent document summarization.
+**Sketchy AI** is a polished web-based chatbot built with **Flask**, **Groq API**, **HTML**, **CSS**, and **JavaScript**.
 
-The project focuses on balancing clean UI/UX with robust backend automation, going beyond a simple "Hello World" chatbot.
+It was created to go beyond a basic chatbot demo by combining a modern chat interface with useful features like **multi-conversation persistence**, **theme switching**, and **document summarization** for `.txt`, `.pdf`, and `.docx` files.
+
+The UI is inspired by modern AI chat applications such as ChatGPT, while still being customized into its own project structure and interaction flow.
 
 ---
 
 ## ✨ Key Features
 
-* **⚡ High-Speed Inference:** Integration with Groq API for lightning-fast token generation.
-* **📂 Document Intelligence:** Extract and summarize insights from `.txt`, `.pdf`, and `.docx` files.
-* **💬 Persistent Workspace:** Manage multiple chat sessions with a local history sidebar.
-* **🌓 Modern UI:** Responsive design with fluid Dark and Light mode transitions.
-* **🐳 Containerized Deployment:** Fully configured Docker and Docker Compose setup for portability.
-* **🔧 Personalized Context:** Supports custom persona profiles via local configuration.
+- **⚡ Fast AI responses** powered by the Groq API.
+- **💬 Multi-chat sidebar** with persistent local conversation history.
+- **📂 Document summarization** for `.txt`, `.pdf`, and `.docx`.
+- **🌓 Dark and light mode** support.
+- **🧠 Custom persona support** through `profile.txt`.
+- **🐳 Docker support** for easy portability and setup.
+- **🎨 Polished interface** inspired by modern AI chat layouts.
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### **Backend**
-- **Core:** Python & Flask
-- **AI Engine:** Groq API (Llama 3.1 8B/70B)
-- **Extraction:** `pypdf` (PDFs) & `python-docx` (Word Documents)
+- Python, Flask, Groq API, `pypdf`, `python-docx`
 
 ### **Frontend**
-- **Markup/Styling:** HTML5, CSS3 (Modern sidebar-based layout)
-- **Interactivity:** Vanilla JavaScript (Asynchronous chat handling & UI state management)
+- HTML5, CSS3, Vanilla JavaScript
 
 ### **Infrastructure**
-- **Containerization:** Docker & Docker Compose
-- **Configuration:** Environment-based variable management (`.env`)
+- Docker, Docker Compose, Environment variables (`.env`)
 
 ---
 
@@ -44,16 +45,42 @@ The project focuses on balancing clean UI/UX with robust backend automation, goi
 
 ```bash
 .
-├── app.py              # Flask server & route management
-├── chatbot.py          # Groq API integration & logic
+├── app.py              # Flask server and route handling
+├── chatbot.py          # Groq integration, chatbot logic, summarization logic
 ├── requirements.txt    # Python dependencies
-├── Dockerfile          # Container instructions
-├── compose.yaml        # Docker Compose orchestration
-├── .env.example        # Template for API keys & settings
-├── profile.txt         # Optional persona/context for the AI
-├── templates/          # Jinja2 HTML templates
-└── static/             # CSS styles and JavaScript logic
+├── Dockerfile          # Docker image instructions
+├── compose.yaml        # Docker Compose configuration
+├── .env.example        # Template for environment variables
+├── profile.txt         # Optional custom profile/persona context
+├── README.md           # Project documentation
+├── templates/
+│   └── index.html
+└── static/
+    ├── style.css
+    └── script.js
 ```
+
+---
+
+## 🤖 Why this project was made
+Sketchy AI was built as a portfolio-style AI web application that demonstrates more than just a basic chatbot. The goal was to create something that feels modern, practical, and polished:
+
+1. A chatbot interface that looks clean and interactive.
+2. A backend that connects to a real AI model via high-speed inference.
+3. A file summarizer that adds useful productivity value.
+4. A project structure that is easy for others to clone and adapt.
+
+---
+
+## 🔑 Before You Run the Project
+Before running Sketchy AI, you need a **Groq API key**.
+
+1. **Get your Groq API key:**
+   - Go to [Groq Console](https://console.groq.com/).
+   - Sign in or create an account.
+   - Navigate to "API Keys" and create a new key.
+2. **Setup your environment:**
+   - Copy that key into your local `.env` file (see below).
 
 ---
 
@@ -61,63 +88,104 @@ The project focuses on balancing clean UI/UX with robust backend automation, goi
 
 ### **Prerequisites**
 - Python 3.9+ or Docker
-- A [Groq API Key](https://console.groq.com/)
+- A Groq API Key
 
 ### **Option 1: Local Installation**
 
-1. **Clone the Repo**
+1. **Clone the repository**
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/sketchy-ai.git](https://github.com/YOUR_USERNAME/sketchy-ai.git)
-   cd sketchy-ai
+   git clone [https://github.com/YOUR_GITHUB_USERNAME/ai-chatbot-gui.git](https://github.com/YOUR_GITHUB_USERNAME/ai-chatbot-gui.git)
+   cd ai-chatbot-gui
    ```
 
-2. **Setup Virtual Environment**
-   ```bash
-   # Windows
-   python -m venv .venv
-   .\.venv\Scripts\Activate.ps1
+2. **Create and activate a virtual environment**
+   - **Windows PowerShell:**
+     ```powershell
+     python -m venv .venv
+     .\.venv\Scripts\Activate.ps1
+     ```
+   - **macOS / Linux:**
+     ```bash
+     python3 -m venv .venv
+     source .venv/bin/activate
+     ```
 
-   # macOS / Linux
-   python3 -m venv .venv
-   source .venv/bin/activate
-   ```
-
-3. **Install Dependencies**
+3. **Install dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Environment Setup**
-   Copy `.env.example` to `.env` and add your Groq API key:
+4. **Configure environment variables**
+   Copy `.env.example` to `.env`:
    ```bash
+   # Windows
+   copy .env.example .env
+   # macOS / Linux
    cp .env.example .env
    ```
+   Edit `.env` and add your real Groq API key:
+   ```env
+   GROQ_API_KEY=your_real_key_here
+   GROQ_MODEL=llama-3.1-8b-instant
+   FLASK_ENV=development
+   PORT=5000
+   ```
 
-5. **Launch**
+5. **Run the app**
    ```bash
    python app.py
    ```
-   Access the app at `http://localhost:5000`.
+   Open [http://localhost:5000](http://localhost:5000).
 
-### **Option 2: Running with Docker**
-
+### **Option 2: Run with Docker**
 ```bash
 docker compose up --build
 ```
+Open [http://localhost:5000](http://localhost:5000).
+
+---
+
+## 📄 Document Summarization
+Sketchy AI supports summarizing `.txt`, `.pdf`, and `.docx` files.
+
+**How it works:**
+The backend extracts raw text from your upload and sends it to the Groq model with a specific summarization prompt. This turns the project into a lightweight AI productivity tool.
+
+---
+
+## 🧩 Customization
+
+### **1. Customize profile.txt**
+The file `profile.txt` provides persona context for the chatbot. Edit it to reflect your background or project goals.
+*Example:*
+```text
+Name: [Your Name]
+Interests: AI Engineering, MLOps, Python Automation
+```
+
+### **2. Customize the System Prompt**
+You can modify the chatbot's behavior (tone, rules, personality) inside `chatbot.py`. Look for the `system_prompt` variable to change how the assistant speaks to users.
+
+### **3. Change Branding**
+To rename the bot, simply search and replace "Sketchy AI" in `templates/index.html` and `chatbot.py`.
 
 ---
 
 ## 🏗️ Future Enhancements
-- [ ] **Streaming Responses:** Implement Server-Sent Events (SSE) for real-time typing.
-- [ ] **Markdown Rendering:** Full support for code blocks and tables in chat.
-- [ ] **Conversation Export:** Save chat logs as PDF or JSON.
-- [ ] **Advanced RAG:** Vector-based search for larger document processing.
+- [ ] Streaming responses for real-time typing.
+- [ ] Markdown rendering in chat replies.
+- [ ] Conversation export as PDF or JSON.
+- [ ] Drag and drop file uploads.
 
 ---
 
 ## ⚖️ License
-This project is open-source and available for learning and portfolio purposes. Feel free to adapt the code and branding for your own work.
+This project is open for learning, experimentation, and portfolio use. Please replace the API keys and customize the persona before sharing your version.
 
 ---
-### Developed with ❤️ for the AI Community
-```
+
+## 🙏 Thanks
+Special thanks to **Groq** for providing the high-speed LPU™ Inference Engine that powers this experience.
+
+---
+**Developed with ❤️ for the AI community.**
