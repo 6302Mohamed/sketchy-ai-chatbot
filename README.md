@@ -1,6 +1,4 @@
-Here is the complete, updated **README.md** content in raw Markdown format. I have fixed the repository URL logic, added the Groq setup steps, and included the customization sections for `profile.txt` and the system prompt as requested.
 
-```markdown
 # 🚀 Sketchy AI
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/downloads/)
