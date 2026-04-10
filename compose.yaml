@@ -1,0 +1,11 @@
+
+services:
+  web:
+    build: .
+    container_name: ai_chatbot_gui
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    volumes:
+      - .:/app

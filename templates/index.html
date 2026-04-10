@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Chatbot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/artificialintelligence.ico') }}">
+</head>
+<body data-theme="dark">
+  <div id="app-shell" class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-wrap">
+          <div class="brand-mark">◎</div>
+        </div>
+      </div>
+
+      <div class="sidebar-nav">
+        <button type="button" id="new-chat-btn" class="nav-btn nav-btn-primary">
+          <span class="nav-icon">✎</span>
+          <span class="nav-label">New chat</span>
+        </button>
+
+        <button type="button" id="search-toggle-btn" class="nav-btn">
+          <span class="nav-icon">⌕</span>
+          <span class="nav-label">Search chats</span>
+        </button>
+      </div>
+
+      <div id="search-wrap" class="search-wrap hidden">
+        <input id="chat-search" type="text" placeholder="Search chats..." />
+      </div>
+
+      <div class="sidebar-section">
+        <div class="section-label">Chats</div>
+        <div id="conversation-list" class="conversation-list"></div>
+      </div>
+    </aside>
+
+    <main id="chat-panel" class="chat-panel empty-mode">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button type="button" id="sidebar-toggle-btn" class="icon-btn" title="Toggle sidebar">
+            ☰
+          </button>
+
+          <div class="model-pill">
+            Sketchy AI
+            <span class="caret">▾</span>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <button type="button" id="theme-toggle-btn" class="icon-btn" title="Toggle black and white theme">
+            ☀
+          </button>
+        </div>
+      </header>
+
+      <div class="chat-main">
+        <section id="hero-state" class="hero-state">
+          <h1 id="hero-greeting" class="typing-headline"></h1>
+        </section>
+
+        <section id="chat-box" class="chat-box hidden"></section>
+
+        <div class="composer-wrap">
+          <div id="selected-file-bar" class="selected-file-bar hidden">
+            <div class="selected-file-info">
+              <span class="file-badge">File</span>
+              <span id="selected-file-name" class="selected-file-name"></span>
+            </div>
+            <button type="button" id="clear-file-btn" class="clear-file-btn">✕</button>
+          </div>
+
+          <div id="attachment-menu" class="attachment-menu hidden">
+            <button type="button" id="attach-file-option" class="attachment-option">
+              <span class="attachment-option-icon">📎</span>
+              <span>Attach file</span>
+            </button>
+          </div>
+
+          <div id="composer" class="composer glow-ring">
+            <button type="button" id="composer-action-btn" class="composer-side-btn" title="More options">
+              ＋
+            </button>
+
+            <input
+              type="file"
+              id="file-input"
+              accept=".txt,.pdf,.docx"
+              hidden
+            />
+
+            <textarea
+              id="user-input"
+              rows="1"
+              placeholder="Ask anything or attach a file to summarize"
+            ></textarea>
+
+            <button type="button" id="send-btn" class="send-btn" title="Send">
+              ↑
+            </button>
+          </div>
+
+          <div class="composer-meta">
+            <div class="composer-hint">
+              Supported files: TXT, PDF, DOCX
+            </div>
+            <div class="composer-warning">
+              Sketchy AI can make mistakes. Please verify important information.
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
