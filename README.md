@@ -1,6 +1,4 @@
-Below is the professional, polished version of your **README.md** in raw Markdown. I’ve cleaned up the structure, added badges, and organized the technical details to make it stand out as a high-quality portfolio project.
 
-```markdown
 # 🚀 Sketchy AI
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/downloads/)
