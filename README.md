@@ -92,9 +92,8 @@ Before running Sketchy AI, you need a **Groq API key**.
 
 1. **Clone the repository**
    ```bash
-  git clone [https://github.com/6302Mohamed/sketchy-ai-chatbot.git](https://github.com/6302Mohamed/sketchy-ai-chatbot.git)
-  cd sketchy-ai-chatbot
-   ```
+   git clone [https://github.com/6302Mohamed/sketchy-ai-chatbot.git](https://github.com/6302Mohamed/sketchy-ai-chatbot.git)
+   cd sketchy-ai-chatbot
 
 2. **Create and activate a virtual environment**
    - **Windows PowerShell:**
