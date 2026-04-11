@@ -92,8 +92,8 @@ Before running Sketchy AI, you need a **Groq API key**.
 
 1. **Clone the repository**
    ```bash
-   git clone [https://github.com/YOUR_GITHUB_USERNAME/ai-chatbot-gui.git](https://github.com/YOUR_GITHUB_USERNAME/ai-chatbot-gui.git)
-   cd ai-chatbot-gui
+  git clone [https://github.com/6302Mohamed/sketchy-ai-chatbot.git](https://github.com/6302Mohamed/sketchy-ai-chatbot.git)
+  cd sketchy-ai-chatbot
    ```
 
 2. **Create and activate a virtual environment**
@@ -139,7 +139,7 @@ Before running Sketchy AI, you need a **Groq API key**.
 ```bash
 docker compose up --build
 ```
-Open [http://localhost:5000](http://localhost:5000).
+Open [http://localhost:](http://localhost:).
 
 ---
 
